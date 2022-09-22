@@ -18,6 +18,55 @@ namespace CarLotSimulator
             //Set the properties for each of the cars
             //Call each of the methods for each car
 
+            var CarLot = new CarLot();
+
+            var car1 = new Car();
+            car1.Year = 2018;
+            car1.Make = "Mazda";
+            car1.Model = "Something";
+
+            CarLot.AddCar(car1);
+            
+
+            Console.WriteLine("Enter the year, make, and model: ");
+            int newCarYear = int.Parse(Console.ReadLine());
+            string newCarMake = Console.ReadLine();
+            string newCarModel = Console.ReadLine();
+            Console.WriteLine("Enter the engine noise and honk noise: ");
+            string newCarEngineNoise = Console.ReadLine();
+            string newCarHonkNoise = Console.ReadLine();
+            Console.WriteLine("Is it driveable? y/n");
+            char yesNo = char.Parse(Console.ReadLine());
+            bool newCarDriveable = false;
+            switch (yesNo)
+            {
+                case 'y':
+                    newCarDriveable = true;
+                    break;
+                case 'n':
+                    newCarDriveable = false;
+                    break;
+                default:
+                    Console.WriteLine("Invalid input");
+                    break;
+            }
+
+            var car2 = new Car(newCarYear, newCarMake, newCarModel, newCarEngineNoise, newCarHonkNoise, newCarDriveable);
+            CarLot.AddCar(car2);
+
+            var car3 = new Car
+            {
+                Year = 1996,
+                Make = "Toyota",
+                Model = "Camry",
+            };
+            CarLot.AddCar(car3);
+
+            for (int i = 0; i < CarLot.sizeLot; i++)
+            {
+                CarLot.cars[i].PrintCarInfo();
+            }
+
             //*************BONUS*************//
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
