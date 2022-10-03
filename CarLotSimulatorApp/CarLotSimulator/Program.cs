@@ -28,12 +28,15 @@ namespace CarLotSimulator
             CarLot.AddCar(car1);
             
 
-            Console.WriteLine("Enter the year, make, and model: ");
+            Console.WriteLine("Enter the year: ");
             int newCarYear = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the make: ");
             string newCarMake = Console.ReadLine();
+            Console.WriteLine("Enter the model: ");
             string newCarModel = Console.ReadLine();
-            Console.WriteLine("Enter the engine noise and honk noise: ");
+            Console.WriteLine("Enter the engine noise: ");
             string newCarEngineNoise = Console.ReadLine();
+            Console.WriteLine("Enter the honk noise: ");
             string newCarHonkNoise = Console.ReadLine();
             Console.WriteLine("Is it driveable? y/n");
             char yesNo = char.Parse(Console.ReadLine());
@@ -62,10 +65,37 @@ namespace CarLotSimulator
             };
             CarLot.AddCar(car3);
 
+            var car4 = new Car()
+            {
+                Year = 2004,
+                Make = "Ford",
+                Model = "Mustang"
+            };
+
+            var car5 = new Car()
+            {
+                Year = 2023,
+                Make = "Kia",
+                Model = "Stinger"
+            };
+
+            var car6 = new Car()
+            {
+                Year = 2010,
+                Make = "Mini",
+                Model = "Hatch",
+            };
+
+            CarLot.AddCar(car4);
+            CarLot.AddCar(car5);
+            CarLot.AddCar(car6);
+
             for (int i = 0; i < CarLot.sizeLot; i++)
             {
                 CarLot.cars[i].PrintCarInfo();
             }
+
+            
 
             //*************BONUS*************//
 

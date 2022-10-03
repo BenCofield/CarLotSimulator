@@ -7,9 +7,12 @@ namespace CarLotSimulator
 {
     public class Car
     {
+        public static int numberOfCars { get; set; }
         //Default constructor
-        public Car() 
-        { 
+        public Car()
+        {
+            numberOfCars++;
+            Console.WriteLine($"Size of car lot: {numberOfCars}");
         }
 
         //Alternative constructor using arguments
